@@ -1,0 +1,117 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.2.4
+-- Dumped by pg_dump version 9.2.4
+-- Started on 2013-05-05 23:57:05
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 188 (class 1259 OID 18637)
+-- Name: meta_metadatabase; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE meta_metadatabase (
+    id integer NOT NULL,
+    schemaid character varying(32) NOT NULL,
+    istemplate character varying(1) NOT NULL,
+    isharvested character varying(1) NOT NULL,
+    createdate character varying(24) NOT NULL,
+    changedate character varying(24) NOT NULL,
+    data text NOT NULL,
+    source character varying(250) NOT NULL,
+    title character varying(255) NOT NULL,
+    root character varying(255) NOT NULL,
+    harvestuuid character varying(250) NOT NULL,
+    owner integer NOT NULL,
+    groupowner integer NOT NULL,
+    harvesturi character varying(255) NOT NULL,
+    rating integer NOT NULL,
+    popularity integer NOT NULL,
+    displayorder integer NOT NULL,
+    uuid character varying(250)
+);
+
+
+ALTER TABLE public.meta_metadatabase OWNER TO postgres;
+
+--
+-- TOC entry 187 (class 1259 OID 18635)
+-- Name: meta_metadatabase_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE meta_metadatabase_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.meta_metadatabase_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 1975 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: meta_metadatabase_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE meta_metadatabase_id_seq OWNED BY meta_metadatabase.id;
+
+
+--
+-- TOC entry 1966 (class 2604 OID 18640)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY meta_metadatabase ALTER COLUMN id SET DEFAULT nextval('meta_metadatabase_id_seq'::regclass);
+
+
+--
+-- TOC entry 1970 (class 0 OID 18637)
+-- Dependencies: 188
+-- Data for Name: meta_metadatabase; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY meta_metadatabase (id, schemaid, istemplate, isharvested, createdate, changedate, data, source, title, root, harvestuuid, owner, groupowner, harvesturi, rating, popularity, displayorder, uuid) FROM stdin;
+1	iso19139	y	n	2012-10-22T15:59:07	2012-10-22T15:59:07	<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:geonet="http://www.fao.org/geonetwork" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.opengis.net/gml http://www.opengis.net/gml/gml.xsd">\r\n  <gmd:fileIdentifier>\r\n    <gco:CharacterString>Fragments_Harvester_Test_Template</gco:CharacterString>\r\n  </gmd:fileIdentifier>\r\n  <gmd:language>\r\n    <gco:CharacterString>eng</gco:CharacterString>\r\n  </gmd:language>\r\n  <gmd:characterSet>\r\n    <gmd:MD_CharacterSetCode codeListValue="utf8" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" />\r\n  </gmd:characterSet>\r\n  <gmd:hierarchyLevel>\r\n    <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" />\r\n  </gmd:hierarchyLevel>\r\n  <gmd:contact>\r\n    <gmd:CI_ResponsibleParty id="contactinfo" />\r\n  </gmd:contact>\r\n  <gmd:dateStamp>\r\n    <gco:DateTime />\r\n  </gmd:dateStamp>\r\n  <gmd:identificationInfo>\r\n    <gmd:MD_DataIdentification>\r\n      <gmd:citation>\r\n        <gmd:CI_Citation id="citation">\r\n          <gmd:title>\r\n            <gco:CharacterString>Deegree22 WFS Fragments Philosopher Database Test Template</gco:CharacterString>\r\n          </gmd:title>\r\n        </gmd:CI_Citation>\r\n      </gmd:citation>\r\n      <gmd:abstract id="abstract" />\r\n      <gmd:pointOfContact>\r\n        <gmd:CI_ResponsibleParty id="contactinfo" />\r\n      </gmd:pointOfContact>\r\n      <gmd:descriptiveKeywords id="keywords" />\r\n      <gmd:language>\r\n        <gco:CharacterString>eng</gco:CharacterString>\r\n      </gmd:language>\r\n      <gmd:topicCategory>\r\n        <gmd:MD_TopicCategoryCode />\r\n      </gmd:topicCategory>\r\n      <gmd:extent>\r\n        <gmd:EX_Extent id="boundingbox" />\r\n      </gmd:extent>\r\n      <gmd:extent>\r\n        <gmd:EX_Extent id="tempextent" />\r\n      </gmd:extent>\r\n    </gmd:MD_DataIdentification>\r\n  </gmd:identificationInfo>\r\n</gmd:MD_Metadata>	da1b1c1a-22db-4f97-86a2-3bdec345345c	0	gmd:MD_Metadata	0	1	1	0	0	2	0	faac5a56-bb50-4edc-805b-0b72bec0a2b3
+2	iso19139	y	n	2012-10-22T15:59:07	2012-10-22T15:59:07	<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:geonet="http://www.fao.org/geonetwork" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.opengis.net/gml http://www.opengis.net/gml/gml.xsd">\r\n  <gmd:fileIdentifier>\r\n    <gco:CharacterString>Geoserver_Fragments_Test_Template</gco:CharacterString>\r\n  </gmd:fileIdentifier>\r\n  <gmd:language>\r\n    <gco:CharacterString>eng</gco:CharacterString>\r\n  </gmd:language>\r\n  <gmd:characterSet>\r\n    <gmd:MD_CharacterSetCode codeListValue="utf8" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" />\r\n  </gmd:characterSet>\r\n  <gmd:hierarchyLevel>\r\n    <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" />\r\n  </gmd:hierarchyLevel>\r\n  <gmd:contact>\r\n    <gmd:CI_ResponsibleParty id="geoservertest.contactinfo" />\r\n  </gmd:contact>\r\n  <gmd:dateStamp>\r\n    <gco:DateTime>2010-01-26T19:56:18</gco:DateTime>\r\n  </gmd:dateStamp>\r\n  <gmd:identificationInfo>\r\n    <gmd:MD_DataIdentification>\r\n      <gmd:citation>\r\n        <gmd:CI_Citation id="geoservertest.citation">\r\n          <gmd:title>\r\n            <gco:CharacterString>Geoserver WFS Fragments Country Boundaries Test Template</gco:CharacterString>\r\n          </gmd:title>\r\n        </gmd:CI_Citation>\r\n      </gmd:citation>\r\n      <gmd:abstract id="geoservertest.abstract" />\r\n      <gmd:pointOfContact>\r\n        <gmd:CI_ResponsibleParty id="geoservertest.contactinfo" />\r\n      </gmd:pointOfContact>\r\n      <gmd:descriptiveKeywords id="geoservertest.keywords" />\r\n      <gmd:language>\r\n        <gco:CharacterString>eng</gco:CharacterString>\r\n      </gmd:language>\r\n      <gmd:extent>\r\n        <gmd:EX_Extent>\r\n          <gmd:geographicElement id="geoservertest.boundingpolygon" />\r\n          <gmd:temporalElement id="geoservertest.tempextent" />\r\n        </gmd:EX_Extent>\r\n      </gmd:extent>\r\n    </gmd:MD_DataIdentification>\r\n  </gmd:identificationInfo>\r\n</gmd:MD_Metadata>	da1b1c1a-22db-4f97-86a2-3bdec345345c	0	gmd:MD_Metadata	0	1	1	0	0	2	0	fad1e359-da83-4e95-a04c-4f78952ed2ce
+\.
+
+
+--
+-- TOC entry 1976 (class 0 OID 0)
+-- Dependencies: 187
+-- Name: meta_metadatabase_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('meta_metadatabase_id_seq', 2, true);
+
+
+--
+-- TOC entry 1968 (class 2606 OID 18645)
+-- Name: meta_metadatabase_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY meta_metadatabase
+    ADD CONSTRAINT meta_metadatabase_pkey PRIMARY KEY (id);
+
+
+-- Completed on 2013-05-05 23:57:05
+
+--
+-- PostgreSQL database dump complete
+--
+
