@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'Geoportal.views.home', name='home'),
+    url(r'^$', 'Geoportal.meta.views.home', name='home'), #META eingefuegt
     # url(r'^Geoportal/', include('Geoportal.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/style.css">
+		<link href="images/favicon.ico" rel="shrtcut icon"/>
+		<title>METADATEN</title>
+	</head>
+<body>
+	
+<div class="container">
+	<h1>Metadaten</h1>
+	<hr />
+	{% for meta in entries %}
+	    <div class="post">
+	    <h2>{{meta.title}}</h2>
+	    </div>
+	    <hr />
+	{% endfor %}
+</div>
+</body>
+</html>
