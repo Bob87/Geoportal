@@ -12,12 +12,35 @@
 <div class="container">
 	<h1>Metadaten</h1>
 	<hr />
-	{% for meta in entries %}
+	<table>
+	<tr>
+		<th><p align="center">Name</th>
+		<th><p align="center">Data</th>
+	</tr>
+	{% for meta in Metadatabase %}
 	    <div class="post">
-	    <h2>{{meta.title}}</h2>
+	    <tr><td>uuid:</td><td>         {{meta.uuid}}</td></tr>
+	    <tr><td>schemaid:</td><td>     {{meta.schemaid}}</td></tr>
+	    <tr><td>istemplate:</td><td>   {{meta.istemplate}}</td></tr>
+	    <tr><td>isharvested:</td><td>  {{meta.isharvested}}</td></tr>
+	    <tr><td>createdate:</td><td>   {{meta.createdate}}</td></tr>
+	    <tr><td>changedate:</td><td>   {{meta.changedate}}</td></tr>
+	    <tr><td>data:</td><td>         {{meta.data}}</td></tr>
+	    <tr><td>source:</td><td>       {{meta.source}}</td></tr>
+	    <tr><td>title:</td><td>        {{meta.title}}</td></tr>
+	    <tr><td>root:</td><td>         {{meta.root}}</td></tr>
+	    <tr><td>harvestuuid:</td><td>  {{meta.harvestuuid}}</td></tr>
+	    <tr><td>owner:</td><td>        {{meta.owner}}</td></tr>
+	    <tr><td>groupowner:</td><td>   {{meta.groupowner}}</td></tr>
+	    <tr><td>harvesturi:</td><td>   {{meta.harvesturi}}</td></tr>
+	    <tr><td>rating:</td><td>       {{meta.rating}}</td></tr>
+	    <tr><td>popularity:</td><td>   {{meta.popularity}}</td></tr>
+	    <tr><td>displayorder:</td><td> {{meta.displayorder}}</td></tr>
 	    </div>
+	    </table>
 	    <hr />
 	{% endfor %}
+	  
 </div>
 </body>
 </html>

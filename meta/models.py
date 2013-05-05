@@ -1,13 +1,13 @@
 from django.db import models
 
 class Metadatabase(models.Model):
-    uuid        = models.IntegerField()
+    uuid        = models.CharField(max_length=250)
     schemaid    = models.CharField(max_length=32)
     istemplate  = models.CharField(max_length=1)
     isharvested = models.CharField(max_length=1)
     createdate  = models.CharField(max_length=24)
     changedate  = models.CharField(max_length=24)
-    data        = models.CharField(max_length=255) #text
+    data        = models.TextField(null=True,blank=True)
     source      = models.CharField(max_length=250)
     title       = models.CharField(max_length=255)
     root        = models.CharField(max_length=255)
@@ -17,4 +17,4 @@ class Metadatabase(models.Model):
     harvesturi  = models.CharField(max_length=255)
     rating      = models.IntegerField()
     popularity  = models.IntegerField()
-    displayorder= models.IntegerField()
+    displayorder= models.IntegerField(null=True)
